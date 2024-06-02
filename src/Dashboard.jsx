@@ -6,11 +6,15 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GiGoat, GiSheep } from "react-icons/gi";
+import { MdLocationCity, MdOutlineLocationCity } from "react-icons/md";
 import {
-  faUser,
-  faStethoscope,
-  faVirus,
-  faChartBar,
+  faUsers,
+  faUserMd,
+  faPaw,
+  faHorse,
+  faFileAlt,
+  faClinicMedical,
   faMapMarkerAlt,
   faGlobe,
   faLayerGroup,
@@ -25,7 +29,20 @@ const chartOptions = {
     text: "Cases from 1-12 Dec, 2024",
   },
   xAxis: {
-    categories: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    categories: [
+      "Narok",
+      "Kajiado",
+      "Bungoma",
+      "Murang'a",
+      "Busia",
+      "Garissa",
+      "Mandera",
+      "Wajir",
+      "Machakos",
+      "Tharaka Nithi",
+      "Kisii",
+      "Kisumu",
+    ],
   },
   yAxis: {
     min: 0,
@@ -92,10 +109,10 @@ const Dashboard = () => {
       <hr className="pb-4" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
         <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
+          <div className="bg-blue-100 p-2 rounded-full mr-4">
             <FontAwesomeIcon
-              icon={faUser}
-              className="text-orange-600 text-2xl"
+              icon={faUsers}
+              className="text-blue-600 text-2xl"
             />
           </div>
           <div>
@@ -104,10 +121,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
+          <div className="bg-green-100 p-2 rounded-full mr-4">
             <FontAwesomeIcon
-              icon={faStethoscope}
-              className="text-orange-600 text-2xl"
+              icon={faUserMd}
+              className="text-green-600 text-2xl"
             />
           </div>
           <div>
@@ -116,11 +133,8 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
-            <FontAwesomeIcon
-              icon={faVirus}
-              className="text-orange-600 text-2xl"
-            />
+          <div className="bg-yellow-100 p-2 rounded-full mr-4">
+            <GiGoat className="text-yellow-600 text-2xl" />
           </div>
           <div>
             <h2 className="text-gray-600">No. of Goats</h2>
@@ -128,24 +142,22 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
-            <FontAwesomeIcon
-              icon={faChartBar}
-              className="text-orange-600 text-2xl"
-            />
+          <div className="bg-red-100 p-2 rounded-full mr-4">
+            <GiSheep className="text-red-600 text-2xl" />
           </div>
           <div>
-            <h2 className="text-gray-600">No. of Sheeps</h2>
+            <h2 className="text-gray-600">No. of Sheep</h2>
             <p className="text-2xl font-bold">18,931,000</p>
           </div>
         </div>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
         <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
+          <div className="bg-purple-100 p-2 rounded-full mr-4">
             <FontAwesomeIcon
-              icon={faUser}
-              className="text-orange-600 text-2xl"
+              icon={faFileAlt}
+              className="text-purple-600 text-2xl"
             />
           </div>
           <div>
@@ -154,10 +166,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
+          <div className="bg-teal-100 p-2 rounded-full mr-4">
             <FontAwesomeIcon
-              icon={faStethoscope}
-              className="text-orange-600 text-2xl"
+              icon={faClinicMedical}
+              className="text-teal-600 text-2xl"
             />
           </div>
           <div>
@@ -165,28 +177,32 @@ const Dashboard = () => {
             <p className="text-2xl font-bold">18,931</p>
           </div>
         </div>
-        <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
-            <FontAwesomeIcon
-              icon={faVirus}
-              className="text-orange-600 text-2xl"
-            />
-          </div>
-          <div>
-            <h2 className="text-gray-600">Confirmed PPR Cases</h2>
-            <p className="text-2xl font-bold">15,083</p>
-          </div>
-        </div>
-        <div className="bg-white p-4 shadow rounded flex items-center">
-          <div className="bg-orange-100 p-2 rounded-full mr-4">
-            <FontAwesomeIcon
-              icon={faChartBar}
-              className="text-orange-600 text-2xl"
-            />
-          </div>
-          <div>
-            <h2 className="text-gray-600">Cases Reported</h2>
-            <p className="text-2xl font-bold">18,931,000</p>
+        <div className="bg-white p-4 shadow rounded flex items-center lg:col-span-2">
+          <div className="flex flex-row w-full text-center justify-around">
+            <div className="flex flex-col items-center">
+              <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
+                <MdLocationCity className="text-orange-600 text-2xl" />
+              </div>
+              <h2 className="text-gray-600 text-2xl">37</h2>
+              <p className="text-gray-600">Counties</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
+                <MdOutlineLocationCity className="text-orange-600 text-2xl" />
+              </div>
+              <h2 className="text-gray-600 text-2xl">237</h2>
+              <p className="text-gray-600">Sub Counties</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
+                <FontAwesomeIcon
+                  icon={faLayerGroup}
+                  className="text-orange-600 text-2xl"
+                />
+              </div>
+              <h2 className="text-gray-600 text-2xl">1237</h2>
+              <p className="text-gray-600">Wards</p>
+            </div>
           </div>
         </div>
       </div>
@@ -295,10 +311,10 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
         <div className="bg-white p-4 shadow rounded">
           <h2 className="text-gray-600">PPR Spread</h2>
-          <div className="h-72">
+          <div className="h-96">
             <MapContainer
               center={[-1.286389, 36.817223]}
               zoom={6}
@@ -318,38 +334,6 @@ const Dashboard = () => {
                 <Popup>Mombasa</Popup>
               </Marker>
             </MapContainer>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          <div className="bg-white p-4 shadow rounded text-center">
-            <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                className="text-orange-600 text-2xl"
-              />
-            </div>
-            <h2 className="text-gray-600">37</h2>
-            <p className="text-gray-600">Counties</p>
-          </div>
-          <div className="bg-white p-4 shadow rounded text-center">
-            <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
-              <FontAwesomeIcon
-                icon={faGlobe}
-                className="text-orange-600 text-2xl"
-              />
-            </div>
-            <h2 className="text-gray-600">237</h2>
-            <p className="text-gray-600">Sub Counties</p>
-          </div>
-          <div className="bg-white p-4 shadow rounded text-center">
-            <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
-              <FontAwesomeIcon
-                icon={faLayerGroup}
-                className="text-orange-600 text-2xl"
-              />
-            </div>
-            <h2 className="text-gray-600">1237</h2>
-            <p className="text-gray-600">Wards</p>
           </div>
         </div>
       </div>

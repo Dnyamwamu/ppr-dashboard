@@ -10,6 +10,7 @@ import {
   faUserCog,
   faSignOutAlt,
   faArrowRight,
+  faClinicMedical,
 } from "@fortawesome/free-solid-svg-icons";
 
 const SideMenu = ({ isSidebarExpanded, toggleSidebar }) => {
@@ -100,7 +101,7 @@ const SideMenu = ({ isSidebarExpanded, toggleSidebar }) => {
               : "hover:bg-white hover:text-orange-600"
           }`}
         >
-          <FontAwesomeIcon icon={faBell} className="mr-2" />
+          <FontAwesomeIcon icon={faClinicMedical} className="mr-2" />
           <span
             className={`${isSidebarExpanded ? "block" : "hidden"} lg:block`}
           >
