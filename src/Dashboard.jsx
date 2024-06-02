@@ -11,6 +11,9 @@ import {
   faStethoscope,
   faVirus,
   faChartBar,
+  faMapMarkerAlt,
+  faGlobe,
+  faLayerGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Mock Data for Charts
@@ -108,7 +111,57 @@ const Dashboard = () => {
             />
           </div>
           <div>
-            <h2 className="text-gray-600">Total Veterinarians</h2>
+            <h2 className="text-gray-600">No. of Veterinarians</h2>
+            <p className="text-2xl font-bold">18,931</p>
+          </div>
+        </div>
+        <div className="bg-white p-4 shadow rounded flex items-center">
+          <div className="bg-orange-100 p-2 rounded-full mr-4">
+            <FontAwesomeIcon
+              icon={faVirus}
+              className="text-orange-600 text-2xl"
+            />
+          </div>
+          <div>
+            <h2 className="text-gray-600">No. of Goats</h2>
+            <p className="text-2xl font-bold">15,083</p>
+          </div>
+        </div>
+        <div className="bg-white p-4 shadow rounded flex items-center">
+          <div className="bg-orange-100 p-2 rounded-full mr-4">
+            <FontAwesomeIcon
+              icon={faChartBar}
+              className="text-orange-600 text-2xl"
+            />
+          </div>
+          <div>
+            <h2 className="text-gray-600">No. of Sheeps</h2>
+            <p className="text-2xl font-bold">18,931,000</p>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div className="bg-white p-4 shadow rounded flex items-center">
+          <div className="bg-orange-100 p-2 rounded-full mr-4">
+            <FontAwesomeIcon
+              icon={faUser}
+              className="text-orange-600 text-2xl"
+            />
+          </div>
+          <div>
+            <h2 className="text-gray-600">Cases Reported</h2>
+            <p className="text-2xl font-bold">605,423</p>
+          </div>
+        </div>
+        <div className="bg-white p-4 shadow rounded flex items-center">
+          <div className="bg-orange-100 p-2 rounded-full mr-4">
+            <FontAwesomeIcon
+              icon={faStethoscope}
+              className="text-orange-600 text-2xl"
+            />
+          </div>
+          <div>
+            <h2 className="text-gray-600">Confirmed PPR cases</h2>
             <p className="text-2xl font-bold">18,931</p>
           </div>
         </div>
@@ -138,7 +191,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div className="bg-white p-4 shadow rounded">
           <h2 className="text-gray-600">Farmers</h2>
           <p className="text-2xl font-bold">3,605,423</p>
@@ -195,25 +248,10 @@ const Dashboard = () => {
             />
           </div>
         </div>
-      </div>
 
-      <div className="bg-white p-4 shadow rounded mb-6">
-        <h2 className="text-gray-600">PPR Cases Distribution Rate by County</h2>
-        <p className="text-2xl font-bold">18,931,000</p>
-        <p className="text-orange-500">+2.1% PPR Cases increase rate</p>
-        <div className="h-72">
-          <HighchartsReact
-            highcharts={Highcharts}
-            options={chartOptions}
-            containerProps={{ style: { width: "100%", height: "100%" } }}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-4 shadow rounded">
           <h2 className="text-gray-600">No of Farmers by County</h2>
-          <div className="h-72">
+          <div className="h-48">
             <HighchartsReact
               highcharts={Highcharts}
               options={{
@@ -242,7 +280,22 @@ const Dashboard = () => {
             />
           </div>
         </div>
+      </div>
 
+      <div className="bg-white p-4 shadow rounded mb-6">
+        <h2 className="text-gray-600">PPR Cases Distribution Rate by County</h2>
+        <p className="text-2xl font-bold">18,931,000</p>
+        <p className="text-orange-500">+2.1% PPR Cases increase rate</p>
+        <div className="h-72">
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={chartOptions}
+            containerProps={{ style: { width: "100%", height: "100%" } }}
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-4 shadow rounded">
           <h2 className="text-gray-600">PPR Spread</h2>
           <div className="h-72">
@@ -267,20 +320,37 @@ const Dashboard = () => {
             </MapContainer>
           </div>
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        <div className="bg-white p-4 shadow rounded text-center">
-          <h2 className="text-gray-600">37</h2>
-          <p className="text-gray-600">Counties</p>
-        </div>
-        <div className="bg-white p-4 shadow rounded text-center">
-          <h2 className="text-gray-600">237</h2>
-          <p className="text-gray-600">Sub Counties</p>
-        </div>
-        <div className="bg-white p-4 shadow rounded text-center">
-          <h2 className="text-gray-600">1237</h2>
-          <p className="text-gray-600">Wards</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          <div className="bg-white p-4 shadow rounded text-center">
+            <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                className="text-orange-600 text-2xl"
+              />
+            </div>
+            <h2 className="text-gray-600">37</h2>
+            <p className="text-gray-600">Counties</p>
+          </div>
+          <div className="bg-white p-4 shadow rounded text-center">
+            <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
+              <FontAwesomeIcon
+                icon={faGlobe}
+                className="text-orange-600 text-2xl"
+              />
+            </div>
+            <h2 className="text-gray-600">237</h2>
+            <p className="text-gray-600">Sub Counties</p>
+          </div>
+          <div className="bg-white p-4 shadow rounded text-center">
+            <div className="bg-orange-100 p-2 rounded-full mb-2 inline-block">
+              <FontAwesomeIcon
+                icon={faLayerGroup}
+                className="text-orange-600 text-2xl"
+              />
+            </div>
+            <h2 className="text-gray-600">1237</h2>
+            <p className="text-gray-600">Wards</p>
+          </div>
         </div>
       </div>
     </>

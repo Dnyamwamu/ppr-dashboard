@@ -8,6 +8,7 @@ import {
   faAngleDown,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 // TopMenu Component
 const TopMenu = ({ role }) => {
@@ -56,31 +57,31 @@ const TopMenu = ({ role }) => {
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
                 <ul className="py-1">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"
                     >
                       <FontAwesomeIcon icon={faBell} className="mr-2" />
                       Notifications
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"
                     >
                       <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                       Messages
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/signin"
                       className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"
                     >
                       <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                       Logout
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -92,31 +93,31 @@ const TopMenu = ({ role }) => {
         <div className="w-full bg-white rounded-md shadow-lg z-10 sm:hidden">
           <ul className="py-1">
             <li>
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"
               >
                 <FontAwesomeIcon icon={faBell} className="mr-2" />
                 Notifications
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                 Messages
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"
               >
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                 Logout
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
