@@ -254,8 +254,8 @@ const Dashboard = () => {
                 series: [
                   {
                     data: [
-                      { name: "Open", y: 60 },
-                      { name: "Closed", y: 40 },
+                      { name: "Cases", y: 60 },
+                      { name: "Confirmed PPR Cases", y: 40 },
                     ],
                   },
                 ],
